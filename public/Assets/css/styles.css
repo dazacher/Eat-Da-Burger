@@ -1,3 +1,32 @@
-h1{
+body{
+    background-image: url("../img/tree-starry-sky.jpg");
+    /* background-image: url("../img/MilkyWay.jpg"); */
+    background-repeat: yes; 
+    background-size: cover; 
+    background-position: center;
+    font-family: 'Noto Serif', serif;
+    color: white;
+}
+
+h1 {
+    text-align: center;
+}
+
+#hamburger-img, #submit-burger {
+    text-align: center;
+}
+
+ #submit, .devoured {
+    background-color: blueviolet;
+    color: white;
+}
+
+#burger-name {
+    width: 300px;
+    padding-bottom: 15px;
+    border-bottom: 15px;
+}
+
+#devouredH3 {
     text-align: center;
 }

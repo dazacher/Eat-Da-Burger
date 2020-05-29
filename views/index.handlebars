@@ -1,27 +1,49 @@
 <div class="container">
     <div class="row">
-        <img src="../Assets/img/hamburger.jpg" class="img-responsive" alt="hamburger gif">
-        <h1>Eat-Da-Burger!</h1>
+        <div class="col-sm-12" id="hamburger-img">
+            <div><img src="../Assets/img/hamburger.jpg" class="img-responsive" alt="hamburger gif"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <h1>Eat-Da-Burger!</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <h3>Burgers Ordered!</h3>
+        </div>
+        <div class="col-sm-6" id="devouredH3">
+            <h3>Burgers Devoured!</h3>
+        </div>
     </div>
     <div class="row">
         <div class="col-sm-4">
-            <h3>Burgers Ordered!</h3>
+
             <div>
                 {{#each burgers}}
                 {{#unless devoured}}
                 <div>
-                    {{id}}. {{burger_name}} <button data-id="{{id}}" class="devoured">Devoured!</button>
+                    {{id}}. {{burger_name}}
+                    {{!-- <button data-id="{{id}}" class="devoured">Devoure It!</button> --}}
                 </div>
                 {{/unless}}
                 {{/each}}
             </div>
         </div>
         <div class="col-sm-4">
-            <input name="burger-name" id="burger-name" /><br>
-            <button id="submit">Submit</button>
+            <div>
+                {{#each burgers}}
+                {{#unless devoured}}
+                <div>
+                    <button data-id="{{id}}" class="devoured">Devoure It!</button>
+                </div>
+                {{/unless}}
+                {{/each}}
+            </div>
         </div>
         <div class="col-sm-4">
-            <h2>Burgers Devoured!</h2>
+            
             <div>
                 {{#each burgers}}
                 {{#if devoured}}
@@ -30,6 +52,15 @@
                 </div>
                 {{/if}}
                 {{/each}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div id="submit-burger">
+                    <input name="burger-name" id="burger-name" /><br>
+                    <button id="submit">Submit</button>
+                    <p>Enter a burger you want to eat. Click the 'Submit' button.</p>
+                </div>
             </div>
         </div>
     </div>
