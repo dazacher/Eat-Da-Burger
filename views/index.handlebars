@@ -1,19 +1,36 @@
-<h1>Eat-Da-Burger!</h1>
-
-<ul>
-  {{#each burger}}
-    {{#unless devoured}}
-      {{> burgers/burger-block devoured=true}}
-    {{/unless}}
-  {{/each}}
-</ul>
-
-<h2>Cats that are sleepy!</h2>
-
-<ul>
-  {{#each burger}}
-    {{#if devoured}}
-      {{> burgers/burger-block devoured=false}}
-    {{/if}}
-  {{/each}}
-</ul>
+<div class="container">
+    <div class="row">
+        <img src="../Assets/img/hamburger.jpg" class="img-responsive" alt="hamburger gif">
+        <h1>Eat-Da-Burger!</h1>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <h3>Burgers Ordered!</h3>
+            <div>
+                {{#each burgers}}
+                {{#unless devoured}}
+                <div>
+                    {{id}}. {{burger_name}} <button data-id="{{id}}" class="devoured">Devoured!</button>
+                </div>
+                {{/unless}}
+                {{/each}}
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <input name="burger-name" id="burger-name" /><br>
+            <button id="submit">Submit</button>
+        </div>
+        <div class="col-sm-4">
+            <h2>Burgers Devoured!</h2>
+            <div>
+                {{#each burgers}}
+                {{#if devoured}}
+                <div>
+                    {{id}}. {{burger_name}}
+                </div>
+                {{/if}}
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</div>

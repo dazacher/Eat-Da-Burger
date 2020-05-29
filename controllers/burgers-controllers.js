@@ -5,12 +5,12 @@ const burgers = require("../models/burger.js");
 // Create all our routes and set up logic within those routes where required.
 router.get("/", async (req, res) => {
   const data = await burgers.all();
-
+console.log(data);
   res.render("index", { burgers: data });
 });
 
 router.post("/api/burgers", async (req, res) => {
-  const data = await burgers.create(["burger_name", "devoured"], [req.body.burger_name, req.body.devoured]);
+  const data = await burgers.create(["burger_name", "devoured"], [req.body.burger_name, false]);
 
   res.json({ id: data.insertId });
 });
@@ -20,7 +20,7 @@ router.put("/api/burgers/:id", async (req, res) => {
 
   console.log("condition", condition);
 
-  const data = await cat.update({ devoured: req.body.devoured }, condition);
+  const data = await burgers.update({ devoured: true}, condition);
 
   if (data.changedRows === 0) {
     res.status(404).end();
