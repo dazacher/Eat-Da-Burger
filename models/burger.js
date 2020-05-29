@@ -1,4 +1,4 @@
-// const orm = require("../config/orm.js");
+const orm = require("../config/orm.js");
 
 const burger = {
   all: async () => {
@@ -22,4 +22,4 @@ const burger = {
 };
 
 // Export the database functions for the controller (burgerController.js).
-// module.exports = burger;
+module.exports = burger;

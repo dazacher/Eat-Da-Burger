@@ -1,4 +1,4 @@
-// const connection = require("./connection");
+const connection = require("./connection");
 
 // Object for all our SQL statement functions.
 const orm = {
@@ -30,4 +30,4 @@ const orm = {
     }
   };
   
-//   module.exports = orm;
+  module.exports = orm;
