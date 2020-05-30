@@ -8,11 +8,7 @@ body{
     color: white;
 }
 
-#hamburger-img, #devouredH3, h1 {
-    text-align: center;
-}
-
-#submit-burger {
+#hamburger-img, #devouredH3, h1, #submit-burger {
     text-align: center;
 }
 
