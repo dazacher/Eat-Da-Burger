@@ -4,29 +4,43 @@ const burgers = require("../models/burger.js");
 
 // Create all our routes and set up logic within those routes where required.
 router.get("/", async (req, res) => {
-  const data = await burgers.all();
-console.log(data);
-  res.render("index", { burgers: data });
+  try {
+    const data = await burgers.all();
+    console.log(data);
+    res.render("index", { burgers: data });
+  } catch (error) {
+    console.log(error);
+  }
 });
 
 router.post("/api/burgers", async (req, res) => {
-  const data = await burgers.create(["burger_name", "devoured"], [req.body.burger_name, false]);
+  try {
+    const data = await burgers.create(["burger_name", "devoured"], [req.body.burger_name, false]);
 
-  res.json({ id: data.insertId });
+    res.json({ id: data.insertId });
+
+  } catch (error) {
+    console.log(error);
+  }
 });
 
 router.put("/api/burgers/:id", async (req, res) => {
-  let condition = `id = ${req.params.id}`;
+  try {
 
-  console.log("condition", condition);
+    let condition = `id = ${req.params.id}`;
 
-  const data = await burgers.update({ devoured: true}, condition);
+    console.log("condition", condition);
 
-  if (data.changedRows === 0) {
-    res.status(404).end();
+    const data = await burgers.update({ devoured: true }, condition);
+
+    if (data.changedRows === 0) {
+      res.status(404).end();
+    }
+
+    res.status(200).end();
+  } catch (error) {
+    console.log(error);
   }
-
-  res.status(200).end();
 });
 
 // Export routes for server.js to use.
