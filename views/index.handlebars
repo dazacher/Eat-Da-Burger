@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-12" id="hamburger-img">
-            <div><img src="../Assets/img/hamburger.jpg" class="img-responsive" alt="hamburger gif"></div>
+            <div><img src="../Assets/img/burger.jpg" class="img-responsive" alt="hamburger gif"></div>
         </div>
     </div>
     <div class="row">
@@ -25,7 +25,6 @@
                 {{#unless devoured}}
                 <div>
                     {{id}}. {{burger_name}}
-                    {{!-- <button data-id="{{id}}" class="devoured">Devoure It!</button> --}}
                 </div>
                 {{/unless}}
                 {{/each}}
@@ -56,11 +55,9 @@
     </div>
     <div class="row">
         <div class="col-12" id="submit-burger">
-
-            <input name="burger-name" id="burger-name" /><br>
+            <input name="burger-name" id="burger-name" placeholder="Enter Burger" /><br>
             <button id="submit">Submit</button>
             <p>Enter a burger you want to eat. Click the 'Submit' button.</p>
-
         </div>
     </div>
 </div>
