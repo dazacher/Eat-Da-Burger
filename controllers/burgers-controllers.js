@@ -33,15 +33,29 @@ router.put("/api/burgers/:id", async (req, res) => {
 
     const data = await burgers.update({ devoured: true }, condition);
 
-    if (data.changedRows === 0) {
-      res.status(404).end();
-    }
-
     res.status(200).end();
   } catch (error) {
     console.log(error);
   }
 });
 
+// DELETE route for deleting todos. We can access the ID of the todo to delete in
+// req.params.id
+router.delete("/api/burgers/:id", async (req, res) => {
+  try {
+
+      let condition = `id = ${req.params.id}`;
+      const data = await burgers.delete(condition);
+
+      if (data.delete === 0) {
+        res.status(404).end();
+      }
+      res.json(data);
+
+  } catch (error) {
+      console.log(error);
+      res.status(500).send(error);
+  }
+});
 // Export routes for server.js to use.
 module.exports = router;

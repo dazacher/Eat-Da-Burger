@@ -18,8 +18,16 @@ const burger = {
     const result = await orm.update("burgers", objColVals, condition);
 
     return result;
+  },
+
+  delete: async (condition) => {
+    const result = await orm.delete("burgers", condition);
+
+    return result;
   }
 };
+
+
 
 // Export the database functions for the controller (burgerController.js).
 module.exports = burger;

@@ -47,7 +47,7 @@
                 {{#each burgers}}
                 {{#if devoured}}
                 <div>
-                    {{id}}. {{burger_name}}
+                    {{id}}. {{burger_name}}<button data-id="{{id}}" class="deleteBurger">x</button>
                 </div>
                 {{/if}}
                 {{/each}}

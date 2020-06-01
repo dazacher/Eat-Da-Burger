@@ -23,3 +23,9 @@ body{
     border-bottom: 15px;
     text-align: center;
 }
+
+.deleteBurger {
+    color: red;
+    border: 0px;
+    background: transparent;
+}
