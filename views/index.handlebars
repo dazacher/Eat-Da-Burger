@@ -21,13 +21,15 @@
         <div class="col-4">
 
             <div>
+                <ul>
                 {{#each burgers}}
                 {{#unless devoured}}
-                <div>
-                    {{id}}. {{burger_name}}
-                </div>
+                <li>
+                    {{burger_name}}
+                </li>
                 {{/unless}}
                 {{/each}}
+                </ul>
             </div>
         </div>
         <div class="col-4">
@@ -42,15 +44,15 @@
             </div>
         </div>
         <div class="col-4">
-            <div>
+            <ul>
                 {{#each burgers}}
                 {{#if devoured}}
-                <div>
-                    {{id}}. {{burger_name}}<button data-id="{{id}}" class="deleteBurger">x</button>
-                </div>
+                <li>
+                    {{burger_name}}<button data-id="{{id}}" class="deleteBurger">x</button>
+                </li>
                 {{/if}}
                 {{/each}}
-            </div>
+            </ul>
         </div>
     </div>
     <div class="row">
