@@ -19,7 +19,7 @@ const burger = {
 
     return result;
   },
-
+// Call the orm Delete functtion
   delete: async (condition) => {
     const result = await orm.delete("burgers", condition);
 

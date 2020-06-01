@@ -65,7 +65,7 @@ const orm = {
 
         return result;
     },
-
+// Delete from table
     delete: async (table, condition) => {
         let queryString = `DELETE FROM ${table} WHERE ${condition}`;
         console.log(queryString);

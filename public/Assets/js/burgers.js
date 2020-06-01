@@ -15,7 +15,7 @@ $(document).ready(function () {
             }
         );
     });
-    // Send the PUT request.
+    // Send the PUT request to the controller.
     $("#submit").on("click", function (event) {
         // Make sure to preventDefault on a submit event.
         event.preventDefault();

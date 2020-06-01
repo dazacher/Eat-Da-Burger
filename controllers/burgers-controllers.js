@@ -12,7 +12,7 @@ router.get("/", async (req, res) => {
     console.log(error);
   }
 });
-
+// Call the burger.js Model
 router.post("/api/burgers", async (req, res) => {
   try {
     const data = await burgers.create(["burger_name", "devoured"], [req.body.burger_name, false]);
