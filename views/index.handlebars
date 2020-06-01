@@ -18,32 +18,32 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-4">
+        <div class="col-6">
 
             <div>
                 <ul>
                 {{#each burgers}}
                 {{#unless devoured}}
                 <li>
-                    {{burger_name}}
+                    {{burger_name}}  <button data-id="{{id}}" class="devoured">Devoure It!</button>
                 </li>
                 {{/unless}}
                 {{/each}}
                 </ul>
             </div>
         </div>
-        <div class="col-4">
+        {{!-- <div class="col-4">
             <div>
                 {{#each burgers}}
                 {{#unless devoured}}
                 <div>
-                    <button data-id="{{id}}" class="devoured">Devoure It!</button>
+                    
                 </div>
                 {{/unless}}
                 {{/each}}
             </div>
-        </div>
-        <div class="col-4">
+        </div> --}}
+        <div class="col-6">
             <ul>
                 {{#each burgers}}
                 {{#if devoured}}
