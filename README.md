@@ -44,7 +44,7 @@ Contributing: Anyone can contribute as long as they follow the MIT licensing gui
 
 ### Tests
 
-Tests: Dee Ann Scanniello
+Tests: There are no tests for this app.
 
 ### Picture
 
